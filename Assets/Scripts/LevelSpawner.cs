@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class LevelSpawner : MonoBehaviour
 {
-	//Config
+	//Config Parameters
 	[SerializeField] GameObject[] levelChunks;
 	[SerializeField] Transform chunkParent;
-	//[SerializeField] BoxCollider2D spawnCollider;
-	//[SerializeField] BoxCollider2D shredCollider;
 
 	//Cache
 	GameObject chunkToSpawn;

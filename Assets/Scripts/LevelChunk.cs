@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelChunk : MonoBehaviour
 {
-	//Config
+	//Config Parameters
 	[SerializeField] public Transform spawnPoint;
 
 	//Cache
