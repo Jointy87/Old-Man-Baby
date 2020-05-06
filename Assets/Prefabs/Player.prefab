@@ -48,11 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201fc244b60e65c4ab0e5b541e83548b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityBuildUp: 0.1
-  maxVelocity: 20
+  velocityBuildUp: 0.2
+  maxVelocity: 12
   stumbleVelocity: 10
   minVelocity: 10
-  jumpVelocity: 0
+  faceJumpVelocityX: 25
+  faceJumpVelocityY: 3
+  faceJumpDuration: 0.3
+  fallVelocity: 7
   feetCollider: {fileID: 752805978445056457}
 --- !u!61 &170543990227602627
 BoxCollider2D:
