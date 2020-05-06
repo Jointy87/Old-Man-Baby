@@ -35,10 +35,12 @@ public class PlayerController : MonoBehaviour
 
 	//Cache
 	Rigidbody2D rb;
+	Animator animator;
 	float faceJumpTimeLeft;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
 	}
 
 	void Update()
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
 		{
 			isFaceJumping = true;
+			animator.SetBool("isFaceJumping", true);
 			faceJumpTimeLeft = faceJumpDuration;
 		}
 	}
@@ -82,6 +85,7 @@ public class PlayerController : MonoBehaviour
 		else if(faceJumpTimeLeft <= 0)
 		{
 			isFaceJumping = false;
+			animator.SetBool("isFaceJumping", false);
 		}
 	}
 	public void Stumble()
@@ -96,6 +100,11 @@ public class PlayerController : MonoBehaviour
 	public void StumbleRecover()
 	{
 		isStumbling = false;
+	}
+
+	public bool FetchFaceJumpStatus()
+	{
+		return isFaceJumping;
 	}
 }
 
