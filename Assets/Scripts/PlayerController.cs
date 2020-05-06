@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 			if (rb.velocity.x <= maxVelocity)
 			{
 				rb.velocity = new Vector2(rb.velocity.x + velocityBuildUp, rb.velocity.y);
-				print(rb.velocity);
+				//print(rb.velocity);
 			}
 			else if (rb.velocity.x > maxVelocity)
 			{
