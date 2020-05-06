@@ -25,4 +25,9 @@ public class TimeKeeper : MonoBehaviour
 		gameTime -= Time.deltaTime;
 		print(gameTime);
 	}
+
+	public void AddTime(int timeToAdd)
+	{
+		gameTime += timeToAdd;
+	}
 }
