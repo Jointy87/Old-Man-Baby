@@ -640,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 3887454420596610925, guid: d51eeace80f74ce45af29be37e4d94c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.75
+      value: -3.1944447
       objectReference: {fileID: 0}
     - target: {fileID: 3887454420596610925, guid: d51eeace80f74ce45af29be37e4d94c2,
         type: 3}
@@ -700,11 +700,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Run Follow Cam
       objectReference: {fileID: 0}
-    - target: {fileID: 7209770169177866657, guid: 34b563a87c3485a4ea33dfac92894c42,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7209770169177866658, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
       propertyPath: m_Follow
@@ -713,7 +708,7 @@ PrefabInstance:
     - target: {fileID: 7209770169177866659, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -77.465836
+      value: -73.91028
       objectReference: {fileID: 0}
     - target: {fileID: 7209770169177866659, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}

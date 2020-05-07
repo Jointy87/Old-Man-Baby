@@ -12,6 +12,7 @@ public class LevelSpawner : MonoBehaviour
 	GameObject chunkToSpawn;
 	GameObject previousChunk;
 	GameObject currentChunk;
+	Rigidbody2D rb;
 
 	void Start()
 	{

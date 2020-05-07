@@ -23,7 +23,6 @@ public class TimeKeeper : MonoBehaviour
 	private void CountDown()
 	{
 		gameTime -= Time.deltaTime;
-		print(gameTime);
 	}
 
 	public void AddTime(int timeToAdd)
