@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Instructions:
   - m_FullHash: -1228779990
     m_VirtualCamera: {fileID: 1183163962}
-    m_ActivateAfter: 0
+    m_ActivateAfter: 0.5
     m_MinDuration: 0
   - m_FullHash: -412990089
     m_VirtualCamera: {fileID: 7209770169966615367}
