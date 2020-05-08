@@ -10,12 +10,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float velocityBuildUp;
 	[Tooltip("The max velocity of the player")]
 	[SerializeField] float maxVelocity;
-	
-	[Header("Stumbling")]
-	[Tooltip("Counter velocity added upon stumbling")]
-	[SerializeField] float stumbleVelocity;
-	[Tooltip("Below this velocity stumbleStoppingForce will not be added. To prevent player rolling backwards")]
-	[SerializeField] float minVelocity;
+
 	
 	[Header("Face Jump")]
 	[Tooltip("Forward velocity upon jumping")]
@@ -29,9 +24,10 @@ public class PlayerController : MonoBehaviour
 	[Header("Misc")]
 	[Tooltip("The collider used to check if the player is touching the ground or not")]
 	[SerializeField] BoxCollider2D feetCollider;
+	[SerializeField] CircleCollider2D preRollCheckCollider;
 
 	//States
-	enum State { isRunning, isFaceJumping, isFalling, isStumbling };
+	enum State { isMoving, isJumping, isFalling, isRolling, isPreRolling};
 
 	//Cache
 	Rigidbody2D rb;
@@ -46,7 +42,7 @@ public class PlayerController : MonoBehaviour
 		animator = GetComponent<Animator>();
 		asc = GetComponent<AgeStateController>();
 
-		currentState = State.isRunning;
+		currentState = State.isMoving;
 	}
 
 	void Update()
@@ -62,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Run()
 	{
-		if (currentState == State.isRunning)
+		if (currentState == State.isMoving)
 		{
 			animator.SetBool("isRunning", true);
 
@@ -81,7 +77,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
 		{
-			currentState = State.isFaceJumping;
+			currentState = State.isJumping;
 			animator.SetBool("isRunning", false);
 			animator.SetBool("isFaceJumping", true);
 			faceJumpTimeLeft = faceJumpDuration;
@@ -89,7 +85,7 @@ public class PlayerController : MonoBehaviour
 	}
 	private void FaceJump()
 	{
-		if(currentState == State.isFaceJumping)
+		if(currentState == State.isJumping)
 		{
 			if (faceJumpTimeLeft > 0)
 			{
@@ -108,32 +104,27 @@ public class PlayerController : MonoBehaviour
 	{
 		if(currentState == State.isFalling)
 		{
+			
 			animator.SetBool("isFalling", true);
 
 			rb.velocity = new Vector2(fallVelocity, rb.velocity.y);
 
-			if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+			if (preRollCheckCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
 			{
-				currentState = State.isRunning;
+				currentState = State.isPreRolling;
 
 				animator.SetBool("isFalling", false);
-				animator.SetTrigger("isStumbling");
+				animator.SetTrigger("isPreRolling");
 			}
 		}
-	}
-	public void Stumble()
-	{
-		currentState = State.isStumbling;
 
-		if (rb.velocity.x > minVelocity)
+		if(currentState == State.isPreRolling && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
 		{
-			rb.velocity = new Vector2(rb.velocity.x - stumbleVelocity, rb.velocity.y);
-		}
-	}
+			currentState = State.isMoving;
 
-	public void StumbleRecover()
-	{
-		currentState = State.isRunning;
+			animator.SetBool("isPreRolling", false);
+			animator.SetTrigger("isRolling");
+		}
 	}
 }
 

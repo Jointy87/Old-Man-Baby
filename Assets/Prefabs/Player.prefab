@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 752805978445056456}
   - component: {fileID: 170543990227602627}
   - component: {fileID: 752805978445056457}
+  - component: {fileID: 6798092912216199313}
   - component: {fileID: 752805978445056054}
   - component: {fileID: 8984093100848460019}
   m_Layer: 0
@@ -64,13 +65,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityBuildUp: 0.2
   maxVelocity: 12
-  stumbleVelocity: 10
-  minVelocity: 10
   faceJumpVelocityX: 25
   faceJumpVelocityY: 3
   faceJumpDuration: 0.3
   fallVelocity: 7
   feetCollider: {fileID: 752805978445056457}
+  preRollCheckCollider: {fileID: 6798092912216199313}
 --- !u!61 &170543990227602627
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,6 +123,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0362372, y: 0.12202966}
   m_EdgeRadius: 0
+--- !u!58 &6798092912216199313
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752805978445056055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!50 &752805978445056054
 Rigidbody2D:
   serializedVersion: 4
