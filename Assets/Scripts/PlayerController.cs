@@ -38,11 +38,13 @@ public class PlayerController : MonoBehaviour
 	Animator animator;
 	float faceJumpTimeLeft;
 	State currentState;
+	AgeStateController asc;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
+		asc = GetComponent<AgeStateController>();
 
 		currentState = State.isRunning;
 	}
@@ -50,9 +52,12 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		Run();
-		AttemptFaceJump();
-		FaceJump();
-		Fall();
+		if(asc.FetchAgeState() == AgeStateController.AgeState.baby)
+		{
+			AttemptFaceJump();
+			FaceJump();
+			Fall();
+		}
 	}
 
 	private void Run()

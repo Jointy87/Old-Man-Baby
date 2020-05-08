@@ -14,7 +14,6 @@ public class PeopleController : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		//timeKeeper.AddTime(timeToAdd);
 		if(other.tag == "Player")
 		{
 			timeKeeper.AddTime(timeToAdd);

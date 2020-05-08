@@ -5,14 +5,16 @@ using UnityEngine;
 public class TimeKeeper : MonoBehaviour
 {
 	//Config parameters
-	[SerializeField] float gameTimeAtStart;
+	[SerializeField] public float gameTimeAtStart;
 
 	//Cache
 	float gameTime;
+	AgeStateController asc;
 	
 	void Start()
 	{
 		gameTime = gameTimeAtStart;
+		asc = FindObjectOfType<AgeStateController>();
 	}
 
 	void Update()
@@ -23,10 +25,21 @@ public class TimeKeeper : MonoBehaviour
 	private void CountDown()
 	{
 		gameTime -= Time.deltaTime;
+
+		if(gameTime <= 0)
+		{
+			asc.SetAgeStateToNext();
+			gameTime = gameTimeAtStart;
+		}
 	}
 
-	public void AddTime(int timeToAdd)
+	public void AddTime(float timeToAdd)
 	{
 		gameTime += timeToAdd;
+	}
+
+	public float FetchGameTime()
+	{
+		return gameTime;
 	}
 }
