@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player Stumble
+  m_Name: Baby Roll
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,25 +20,28 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 8600498265919669410, guid: 44858e2d1de9fbf4f98da8dafcdc75c8,
+      value: {fileID: -8708063041693954913, guid: 21ba29f01018390438b31d9de0765cd3,
         type: 3}
-    - time: 0.1
-      value: {fileID: 3889194326918633226, guid: 44858e2d1de9fbf4f98da8dafcdc75c8,
+    - time: 0.083333336
+      value: {fileID: 3612767044866003380, guid: 21ba29f01018390438b31d9de0765cd3,
         type: 3}
-    - time: 0.2
-      value: {fileID: -7394107038243734108, guid: 44858e2d1de9fbf4f98da8dafcdc75c8,
+    - time: 0.16666667
+      value: {fileID: -1618351496587784671, guid: 21ba29f01018390438b31d9de0765cd3,
         type: 3}
-    - time: 0.3
-      value: {fileID: -1225887521373554409, guid: 44858e2d1de9fbf4f98da8dafcdc75c8,
+    - time: 0.25
+      value: {fileID: 2349413711508519084, guid: 21ba29f01018390438b31d9de0765cd3,
         type: 3}
-    - time: 0.4
-      value: {fileID: -7164930610656539256, guid: 44858e2d1de9fbf4f98da8dafcdc75c8,
+    - time: 0.33333334
+      value: {fileID: -2939399041623332222, guid: 21ba29f01018390438b31d9de0765cd3,
+        type: 3}
+    - time: 0.41666666
+      value: {fileID: -6585029316317297976, guid: 21ba29f01018390438b31d9de0765cd3,
         type: 3}
     attribute: m_Sprite
     path: Sprite
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -53,11 +56,12 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 8600498265919669410, guid: 44858e2d1de9fbf4f98da8dafcdc75c8, type: 3}
-    - {fileID: 3889194326918633226, guid: 44858e2d1de9fbf4f98da8dafcdc75c8, type: 3}
-    - {fileID: -7394107038243734108, guid: 44858e2d1de9fbf4f98da8dafcdc75c8, type: 3}
-    - {fileID: -1225887521373554409, guid: 44858e2d1de9fbf4f98da8dafcdc75c8, type: 3}
-    - {fileID: -7164930610656539256, guid: 44858e2d1de9fbf4f98da8dafcdc75c8, type: 3}
+    - {fileID: -8708063041693954913, guid: 21ba29f01018390438b31d9de0765cd3, type: 3}
+    - {fileID: 3612767044866003380, guid: 21ba29f01018390438b31d9de0765cd3, type: 3}
+    - {fileID: -1618351496587784671, guid: 21ba29f01018390438b31d9de0765cd3, type: 3}
+    - {fileID: 2349413711508519084, guid: 21ba29f01018390438b31d9de0765cd3, type: 3}
+    - {fileID: -2939399041623332222, guid: 21ba29f01018390438b31d9de0765cd3, type: 3}
+    - {fileID: -6585029316317297976, guid: 21ba29f01018390438b31d9de0765cd3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -90,7 +94,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.4
+  - time: 0.5
     functionName: StumbleRecover
     data: 
     objectReferenceParameter: {fileID: 0}
