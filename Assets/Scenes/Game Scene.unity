@@ -556,14 +556,10 @@ MonoBehaviour:
   - {fileID: 1183163962}
   - {fileID: 7209770169966615367}
   m_Instructions:
-  - m_FullHash: -1228779990
+  - m_FullHash: -1670997940
     m_VirtualCamera: {fileID: 1183163962}
     m_ActivateAfter: 0.5
     m_MinDuration: 0
-  - m_FullHash: -412990089
-    m_VirtualCamera: {fileID: 7209770169966615367}
-    m_ActivateAfter: 0
-    m_MinDuration: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -575,13 +571,15 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 11400000, guid: 50b7cf6cc4e3e884eb08fbf901915200, type: 2}
   m_ParentHash:
-  - m_Hash: -1228779990
+  - m_Hash: -1670997940
     m_ParentHash: 756556552
-  - m_Hash: -2130220893
+  - m_Hash: -1448988468
     m_ParentHash: 756556552
-  - m_Hash: -412990089
+  - m_Hash: 547619860
     m_ParentHash: 756556552
-  - m_Hash: -1149133715
+  - m_Hash: 2085084430
+    m_ParentHash: 756556552
+  - m_Hash: 2073963234
     m_ParentHash: 756556552
 --- !u!4 &1619999527 stripped
 Transform:
@@ -652,6 +650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpVelocity
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 752805978445056456, guid: 3e258124d4e73024d98ac317b7b67874,
+        type: 3}
+      propertyPath: faceJumpDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 752805978445056459, guid: 3e258124d4e73024d98ac317b7b67874,
         type: 3}
@@ -791,6 +794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Virtual FaceJump Follow Cam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933731579701451142, guid: f8f9e63b24eec464d99e07ecc4252b71,
+        type: 3}
+      propertyPath: m_LookaheadTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8f9e63b24eec464d99e07ecc4252b71, type: 3}
@@ -946,7 +954,7 @@ PrefabInstance:
     - target: {fileID: 7209770169177866659, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7209770169177866659, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
