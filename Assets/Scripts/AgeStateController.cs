@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class AgeStateController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AgeStateController : MonoBehaviour
 	[SerializeField] GameObject[] playerObjects;
 	[SerializeField] Animator[] playerAnimators;
 	[SerializeField] Rigidbody2D[] playerRigidBodies;
+	[SerializeField] CinemachineVirtualCamera followCam;
 
 	//Cache
 	AgeState currentAge;
@@ -36,23 +38,47 @@ public class AgeStateController : MonoBehaviour
 		objectIndex = 0;
 	}
 
-	public void SetAgeStateToNext()
+	public void HandleAgeStateChange()
 	{
-		int stateIndex = (int)currentAge;
-		AgeState nextAgeState = (AgeState)stateIndex + 1;
-		currentAge = nextAgeState;
+		SetNextAgeState();
+		AssignCorrectAnimator();
+		AssignCorrectRigidbody();
+		ActivateCorrectGameObject();
+		SetFollowCamToCorrectTransform();
+	}
 
-		currentAnimator = playerAnimators[currentAnimatorIndex + 1];
+	private void SetFollowCamToCorrectTransform()
+	{
+		followCam.Follow = activeObject.transform;
+	}
 
+	private void ActivateCorrectGameObject()
+	{
 		previousObject = activeObject;
 		previousObject.SetActive(false);
 		activeObject = playerObjects[objectIndex + 1];
 		activeObject.SetActive(true);
-		activeObject.transform.position = new Vector2(previousObject.transform.position.x, previousObject.transform.position.y + 1);
-		
+		activeObject.transform.position =
+			new Vector2(previousObject.transform.position.x, previousObject.transform.position.y + 1);
+	}
 
-		pc.SetCurrentAnimator(currentAnimator);
+	private void AssignCorrectRigidbody()
+	{
+		currentRB = playerRigidBodies[currentRBIndex + 1];
 		pc.SetCurrentRigidbody(currentRB);
+	}
+
+	private void AssignCorrectAnimator()
+	{
+		currentAnimator = playerAnimators[currentAnimatorIndex + 1];
+		pc.SetCurrentAnimator(currentAnimator);
+	}
+
+	private void SetNextAgeState()
+	{
+		int stateIndex = (int)currentAge;
+		AgeState nextAgeState = (AgeState)stateIndex + 1;
+		currentAge = nextAgeState;
 	}
 
 	public AgeState FetchAgeState()
