@@ -38,18 +38,18 @@ public class PlayerController : MonoBehaviour
 
 	void Start()
 	{
-		rb = GetComponent<Rigidbody2D>();
-		animator = GetComponent<Animator>();
 		asc = GetComponent<AgeStateController>();
+		animator = asc.FetchAnimatorController();
 
 		currentState = State.isMoving;
+		rb = asc.FetchRigidbody();
 	}
 
 	void Update()
 	{
-		Run();
-		if(asc.FetchAgeState() == AgeStateController.AgeState.baby)
+		if (asc.FetchAgeState() == AgeStateController.AgeState.baby)
 		{
+			Run();
 			AttemptFaceJump();
 			FaceJump();
 			Fall();
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (currentState == State.isMoving)
 		{
-			animator.SetBool("isRunning", true);
+			animator.SetBool("isSliding", true);
 
 			if (rb.velocity.x <= maxVelocity)
 			{
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Jump") && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
 		{
 			currentState = State.isJumping;
-			animator.SetBool("isRunning", false);
+			animator.SetBool("isSliding", false);
 			animator.SetBool("isFaceJumping", true);
 			faceJumpTimeLeft = faceJumpDuration;
 		}
@@ -125,6 +125,16 @@ public class PlayerController : MonoBehaviour
 			animator.SetBool("isPreRolling", false);
 			animator.SetTrigger("isRolling");
 		}
+	}
+
+	public void SetCurrentAnimator(Animator incomingAnimator)
+	{
+		animator = incomingAnimator;
+	}
+
+	public void SetCurrentRigidbody(Rigidbody2D incomingRB)
+	{
+		rb = incomingRB;
 	}
 }
 
