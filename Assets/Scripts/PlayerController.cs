@@ -55,6 +55,10 @@ public class PlayerController : MonoBehaviour
 			FaceJump();
 			Fall();
 		}
+		else if(asc.FetchAgeState() == AgeStateController.AgeState.youngster)	//TO DO: ADULT INSTEAD OF YOUNGSTER
+		{
+			HighFive();
+		}
 	}
 
 	private void Run()
@@ -125,6 +129,14 @@ public class PlayerController : MonoBehaviour
 
 			animator.SetBool("isPreRolling", false);
 			animator.SetTrigger("isRolling");
+		}
+	}
+	
+	private void HighFive()
+	{
+		if (Input.GetButtonDown("Jump"))
+		{
+			animator.SetTrigger("isHighFiving");
 		}
 	}
 	public void SetCurrentAnimator(Animator incomingAnimator)

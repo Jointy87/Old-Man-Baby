@@ -53,6 +53,7 @@ MonoBehaviour:
   playerRigidBodies:
   - {fileID: 6162867530116674850}
   - {fileID: 8280135000315139583}
+  followCam: {fileID: 0}
 --- !u!114 &4367312485620858695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,11 +67,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityBuildUp: 0.2
-  maxVelocity: 12
+  maxVelocity: 15
   faceJumpVelocityX: 25
   faceJumpVelocityY: 3
   faceJumpDuration: 0.5
-  fallVelocity: 7
+  fallVelocity: 10
   feetCollider: {fileID: 6162867530116674781}
   preRollCheckCollider: {fileID: 118161409759112581}
 --- !u!1001 &1171379318351468464
