@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7209770169177866659}
   - component: {fileID: 7209770169177866658}
   m_Layer: 0
-  m_Name: Virtual Run Cam
+  m_Name: Player Follow Cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

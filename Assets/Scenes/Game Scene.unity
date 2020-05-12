@@ -641,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 4933731579489354352, guid: f8f9e63b24eec464d99e07ecc4252b71,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -77.465836
+      value: -70.715836
       objectReference: {fileID: 0}
     - target: {fileID: 4933731579489354352, guid: f8f9e63b24eec464d99e07ecc4252b71,
         type: 3}
@@ -759,7 +759,7 @@ PrefabInstance:
     - target: {fileID: 3887454420596610925, guid: d51eeace80f74ce45af29be37e4d94c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1944447
+      value: 3.5555553
       objectReference: {fileID: 0}
     - target: {fileID: 3887454420596610925, guid: d51eeace80f74ce45af29be37e4d94c2,
         type: 3}
@@ -897,6 +897,11 @@ PrefabInstance:
       propertyPath: playerObjects.Array.data[1]
       value: 
       objectReference: {fileID: 645568138}
+    - target: {fileID: 8783139123806090718, guid: 61bd8080af99a4d4cb2361aa67a24690,
+        type: 3}
+      propertyPath: followCam
+      value: 
+      objectReference: {fileID: 1183163962}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61bd8080af99a4d4cb2361aa67a24690, type: 3}
 --- !u!4 &7209770169966615366 stripped
@@ -927,7 +932,7 @@ PrefabInstance:
     - target: {fileID: 7209770169177866657, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
       propertyPath: m_Name
-      value: Virtual Run Follow Cam
+      value: Player Follow Cam
       objectReference: {fileID: 0}
     - target: {fileID: 7209770169177866658, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
@@ -937,7 +942,7 @@ PrefabInstance:
     - target: {fileID: 7209770169177866659, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -73.91028
+      value: -67.16028
       objectReference: {fileID: 0}
     - target: {fileID: 7209770169177866659, guid: 34b563a87c3485a4ea33dfac92894c42,
         type: 3}

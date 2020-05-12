@@ -47,9 +47,10 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
+		Run();
+
 		if (asc.FetchAgeState() == AgeStateController.AgeState.baby)
-		{
-			Run();
+		{ 
 			AttemptFaceJump();
 			FaceJump();
 			Fall();
@@ -126,7 +127,6 @@ public class PlayerController : MonoBehaviour
 			animator.SetTrigger("isRolling");
 		}
 	}
-
 	public void SetCurrentAnimator(Animator incomingAnimator)
 	{
 		animator = incomingAnimator;

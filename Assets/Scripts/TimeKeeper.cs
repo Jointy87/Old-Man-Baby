@@ -28,7 +28,7 @@ public class TimeKeeper : MonoBehaviour
 
 		if(gameTime <= 0)
 		{
-			asc.SetAgeStateToNext();
+			asc.HandleAgeStateChange();
 			gameTime = gameTimeAtStart;
 		}
 	}
