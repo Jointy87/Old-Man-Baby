@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour
 		animator = asc.FetchAnimatorController();
 
 		currentState = State.isMoving;
-		rb = asc.FetchRigidbody();
+		//rb = asc.FetchRigidbody();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	void Update()
@@ -144,9 +145,9 @@ public class PlayerController : MonoBehaviour
 		animator = incomingAnimator;
 	}
 
-	public void SetCurrentRigidbody(Rigidbody2D incomingRB)
-	{
-		rb = incomingRB;
-	}
+	//public void SetCurrentRigidbody(Rigidbody2D incomingRB)
+	//{
+	//	rb = incomingRB;
+	//}
 }
 

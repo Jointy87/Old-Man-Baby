@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1250410557929201546}
   - component: {fileID: 8783139123806090718}
   - component: {fileID: 4367312485620858695}
+  - component: {fileID: 5202221444954139700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -51,8 +52,8 @@ MonoBehaviour:
   - {fileID: 2547224578312801767}
   - {fileID: 6162867530514669393}
   playerRigidBodies:
-  - {fileID: 6162867530116674850}
-  - {fileID: 8280135000315139583}
+  - {fileID: 0}
+  - {fileID: 0}
   followCam: {fileID: 0}
 --- !u!114 &4367312485620858695
 MonoBehaviour:
@@ -74,6 +75,27 @@ MonoBehaviour:
   fallVelocity: 10
   feetCollider: {fileID: 6162867530116674781}
   preRollCheckCollider: {fileID: 118161409759112581}
+--- !u!50 &5202221444954139700
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575076750460373492}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1171379318351468464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,7 +163,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Adult
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7109320831125422671, guid: 2d50e0a8238ae0b4498c54920bb2a4fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d50e0a8238ae0b4498c54920bb2a4fd, type: 3}
 --- !u!4 &6162867530514669398 stripped
 Transform:
@@ -152,12 +175,6 @@ Transform:
 --- !u!95 &6162867530514669393 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5028115143692224737, guid: 2d50e0a8238ae0b4498c54920bb2a4fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1171379318351468464}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &8280135000315139583 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7109320831125422671, guid: 2d50e0a8238ae0b4498c54920bb2a4fd,
     type: 3}
   m_PrefabInstance: {fileID: 1171379318351468464}
   m_PrefabAsset: {fileID: 0}
@@ -244,7 +261,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9d10ead6f0b72314ca9e5a74d3645be0, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 752805978445056054, guid: 3e258124d4e73024d98ac317b7b67874, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e258124d4e73024d98ac317b7b67874, type: 3}
 --- !u!4 &6162867530116674783 stripped
 Transform:
@@ -261,12 +279,6 @@ BoxCollider2D:
 --- !u!58 &118161409759112581 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 6798092912216199313, guid: 3e258124d4e73024d98ac317b7b67874,
-    type: 3}
-  m_PrefabInstance: {fileID: 6914263827213630740}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &6162867530116674850 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 752805978445056054, guid: 3e258124d4e73024d98ac317b7b67874,
     type: 3}
   m_PrefabInstance: {fileID: 6914263827213630740}
   m_PrefabAsset: {fileID: 0}

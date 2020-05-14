@@ -8,7 +8,7 @@ public class AgeStateController : MonoBehaviour
 	//Config parameters
 	[SerializeField] GameObject[] playerObjects;
 	[SerializeField] Animator[] playerAnimators;
-	[SerializeField] Rigidbody2D[] playerRigidBodies;
+	//[SerializeField] Rigidbody2D[] playerRigidBodies;
 	[SerializeField] CinemachineVirtualCamera followCam;
 
 	//Cache
@@ -16,8 +16,8 @@ public class AgeStateController : MonoBehaviour
 	Animator currentAnimator;
 	int currentAnimatorIndex;
 	PlayerController pc;
-	Rigidbody2D currentRB;
-	int currentRBIndex;
+	//Rigidbody2D currentRB;
+	//int currentRBIndex;
 	GameObject activeObject;
 	GameObject previousObject;
 	int objectIndex;
@@ -32,8 +32,8 @@ public class AgeStateController : MonoBehaviour
 		currentAnimator = playerAnimators[0];
 		currentAnimatorIndex = 0;
 		pc = GetComponent<PlayerController>();
-		currentRB = playerRigidBodies[0];
-		currentRBIndex = 0;
+		//currentRB = playerRigidBodies[0];
+		//currentRBIndex = 0;
 		activeObject = playerObjects[0];
 		objectIndex = 0;
 	}
@@ -42,7 +42,7 @@ public class AgeStateController : MonoBehaviour
 	{
 		SetNextAgeState();
 		AssignCorrectAnimator();
-		AssignCorrectRigidbody();
+		//AssignCorrectRigidbody();
 		ActivateCorrectGameObject();
 		SetFollowCamToCorrectTransform();
 	}
@@ -62,11 +62,11 @@ public class AgeStateController : MonoBehaviour
 			new Vector2(previousObject.transform.position.x, previousObject.transform.position.y + 1);
 	}
 
-	private void AssignCorrectRigidbody()
-	{
-		currentRB = playerRigidBodies[currentRBIndex + 1];
-		pc.SetCurrentRigidbody(currentRB);
-	}
+	//private void AssignCorrectRigidbody()
+	//{
+	//	currentRB = playerRigidBodies[currentRBIndex + 1];
+	//	pc.SetCurrentRigidbody(currentRB);
+	//}
 
 	private void AssignCorrectAnimator()
 	{
@@ -91,8 +91,8 @@ public class AgeStateController : MonoBehaviour
 		return currentAnimator;
 	}
 
-	public Rigidbody2D FetchRigidbody()
-	{
-		return currentRB;
-	}
+	//public Rigidbody2D FetchRigidbody()
+	//{
+	//	return currentRB;
+	//}
 }
