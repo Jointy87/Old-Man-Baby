@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8984093100848460019}
   m_Layer: 0
   m_Name: Baby
-  m_TagString: Untagged
+  m_TagString: BabyPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
+  m_Offset: {x: 0, y: -1}
   serializedVersion: 2
   m_Radius: 0.1
 --- !u!50 &752805978445056054

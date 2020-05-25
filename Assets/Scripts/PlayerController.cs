@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float faceJumpVelocityY;
 	[Tooltip("The duration the facejump lasts")]
 	[SerializeField] float faceJumpDuration;
-	[SerializeField] float fallVelocity;
+	[SerializeField] float fallVelocityX;
+	[SerializeField] float fallVelocityY;
 
 	[Header("Misc")]
 	[Tooltip("The collider used to check if the player is touching the ground or not")]
@@ -42,7 +43,6 @@ public class PlayerController : MonoBehaviour
 		animator = asc.FetchAnimatorController();
 
 		currentState = State.isMoving;
-		//rb = asc.FetchRigidbody();
 		rb = GetComponent<Rigidbody2D>();
 	}
 
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
 			
 			animator.SetBool("isFalling", true);
 
-			rb.velocity = new Vector2(fallVelocity, rb.velocity.y);
+			rb.velocity = new Vector2(fallVelocityX, rb.velocity.y -fallVelocityY);
 
 			if (preRollCheckCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
 			{
@@ -144,10 +144,5 @@ public class PlayerController : MonoBehaviour
 	{
 		animator = incomingAnimator;
 	}
-
-	//public void SetCurrentRigidbody(Rigidbody2D incomingRB)
-	//{
-	//	rb = incomingRB;
-	//}
 }
 

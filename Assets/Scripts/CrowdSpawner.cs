@@ -5,7 +5,8 @@ using UnityEngine;
 public class CrowdSpawner : MonoBehaviour
 {
 	//Config parameters
-	[SerializeField] Transform spawnLocation;
+	[SerializeField] float spawnPosX;
+	[SerializeField] float spawnPosY;
 	[SerializeField] float intervalMin;
 	[SerializeField] float intervalMax;
 	[SerializeField] GameObject personPrefab;
@@ -23,7 +24,7 @@ public class CrowdSpawner : MonoBehaviour
 
 	private IEnumerator SpawnCrowd()
 	{
-		Vector2 spawnPosition = new Vector2(spawnLocation.position.x, spawnLocation.position.y);
+		Vector2 spawnPosition = new Vector2(transform.position.x + spawnPosX, spawnPosY);
 		GameObject spawnedPerson = Instantiate(personPrefab, spawnPosition, Quaternion.identity);
 
 		float spawnInterval = Random.Range(intervalMin, intervalMax);

@@ -7,6 +7,10 @@ TagManager:
   - ChunkEnd
   - SpawnCollider
   - ShredCollider
+  - BabyPlayer
+  - YoungsterPlayer
+  - AdultPlayer
+  - ElderPlayer
   layers:
   - Default
   - TransparentFX
