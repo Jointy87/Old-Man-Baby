@@ -53,7 +53,8 @@ public class AgeStateController : MonoBehaviour
 		activeObject = playerObjects[objectIndex + 1];
 		activeObject.SetActive(true);
 		activeObject.transform.position =
-			new Vector2(previousObject.transform.position.x, previousObject.transform.position.y + 1);
+			new Vector2(previousObject.transform.position.x, previousObject.transform.position.y + 1.5f);
+			//TO DO: the offset in Y should probably be an open value that's different per agestate transition
 	}
 
 	private void AssignCorrectAnimator()

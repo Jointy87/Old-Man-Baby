@@ -68,10 +68,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityBuildUp: 0.2
   maxVelocity: 15
-  faceJumpVelocityX: 25
-  faceJumpVelocityY: 3
-  faceJumpDuration: 0.5
-  fallVelocity: 10
+  faceJumpVelocityX: 20
+  faceJumpVelocityY: 10
+  faceJumpDuration: 0.3
+  fallVelocityX: 10
+  fallVelocityY: 0.35
   feetCollider: {fileID: 6162867530116674781}
   preRollCheckCollider: {fileID: 118161409759112581}
 --- !u!50 &5202221444954139700
