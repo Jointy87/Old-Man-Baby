@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTimeAtStart: 15
+  timeToAddOnHit: 3
 --- !u!1 &7388433542508158676
 GameObject:
   m_ObjectHideFlags: 0

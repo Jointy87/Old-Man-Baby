@@ -6,6 +6,7 @@ public class TimeKeeper : MonoBehaviour
 {
 	//Config parameters
 	[SerializeField] public float gameTimeAtStart;
+	[SerializeField] public float timeToAddOnHit;
 
 	//Cache
 	float gameTime;
